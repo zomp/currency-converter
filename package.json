@@ -1,6 +1,17 @@
 {
   "name": "currency-converter",
+  "description": "Convert one type of currency to another",
   "version": "0.0.0",
+  "author": "Jan Molnár",
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/zomp/currency-converter#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zomp/currency-converter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zomp/currency-converter/issues"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
