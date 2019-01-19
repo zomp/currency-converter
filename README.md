@@ -1,27 +1,34 @@
 # CurrencyConverter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
+Convert one type of currency to another.
 
-## Development server
+## Project initialization
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Install Node.js and npm and then enter the project directory and run `npm install` to get all the required dependencies installed and set.
 
-## Code scaffolding
+## App preview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `npm start` to preview the app. Navigate to `http://localhost:4200/`. (The app will automatically reload if you change any of the source files.)
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `npm run e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Running linter
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `npm run lint` to execute the linter via [TSLint](https://palantir.github.io/tslint/).
+
+## License
+
+[GNU General Public License Version v3.0](https://github.com/zomp/currency-converter/blob/master/LICENSE).
+
+## To Do
+
+Out of scope of the assignment, but necessary to implement before going to production:
+* Testing – a proper one, here only the scaffolding is implemented
+* Deploying
+* Accessibility
