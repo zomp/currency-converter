@@ -1,0 +1,26 @@
+:host {
+  text-align: center;
+}
+
+
+.container div {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  text-align: left;
+}
+
+@media (min-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+td {
+  text-align: right;
+}
+
+.base-currency {
+  color: red;
+}
