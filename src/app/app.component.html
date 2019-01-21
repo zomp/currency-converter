@@ -1,20 +1,50 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div>
   <h1>
-    Welcome to {{ title }}!
+    {{ title }}
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <div class="container">
+    <div>
+      <form (ngSubmit)="onSubmit()" #appComponent="ngForm" ngNativeValidate>
+        <p>
+          <label for="base">Base</label>
+          <select class="form-field" id="base" [(ngModel)]="base" name="base" required>
+            <option *ngFor="let base of baseCurrencies" [value]="base">{{base}}</option>
+          </select>
+        </p>
+        <p>
+          <label for="date">Date</label>
+          <input class="form-field" type="date" id="date" [(ngModel)]="date" name="date" required>
+        </p>
+        <p>
+          <button class="form-field" type="submit">Display</button>
+        </p>
+      </form>
+    </div>
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">
+              Currency
+              <button class="sorter" (click)="sortAsc()" type="button" title="Sort alphabetically: ascending">▲</button>
+              <button class="sorter" (click)="sortDesc()" type="button" title="Sort alphabetically: descending">▼</button>
+            </th>
+            <th scope="col">Buy</th>
+            <th scope="col">Sel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let currencyRate of currencyRates" [class.base-currency]="baseCurrencies.indexOf(currencyRate.currency) > -1">
+            <th scope="row">{{currencyRate.currency}}</th>
+            <td>{{currencyRate.rate * 0.95 | number:'1.4-4'}}</td>
+            <td>{{currencyRate.rate * 1.05 | number:'1.4-4'}}</td>
+          </tr>
+          <tr *ngIf="currencyRates?.length === 0">
+            <td colspan="1000">Select the base and date.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
